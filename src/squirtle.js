@@ -7,8 +7,7 @@ var makeSquirtle = function(top, left, timeBetweenSteps) {
   this.$node.append('<img src="https://media.giphy.com/media/eEPTnQjYCk8Vi/giphy.gif" alt="squirtle" style="width:100px; height:100px" />');
 
   $('.squirtle').mouseover(function() {
-    //console.log('Squirtle mouseover accessed');
-
+    $('.squirtle').toggle( 'bounce', {times: 1}, 'slow' );
   });
 };
 

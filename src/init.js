@@ -34,10 +34,16 @@ $(document).ready(function () {
   $('.lineup').on('click', function (e) {
     for (let i = 0; i < window.dancers.length; ++i) {
       window.dancers[i].lineUp();
+      music();
     }
   });
 
+  let music = function () {
+    let song = new Audio(src="./audio/pokemon.mp3");
 
+    song.volume = 0.005;
+    song.play();
+  };
 
 });
 

@@ -12,8 +12,6 @@ makeBulbasaur.prototype.constructor = makeBulbasaur;
 
 makeBulbasaur.prototype.step = function () {
   makeDancer.prototype.step.call(this);
-  // let rng = Math.floor(Math.random * 99);
-  // this.$node.css('filter', `invert(${rng}%)`);
 };
 
 
