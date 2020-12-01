@@ -37,9 +37,7 @@ $(document).ready(function () {
     }
   });
 
-  $('.dancer').mouseover(function() {
-    this.$node.toggle('bounce', {times: 3}, 'slow');
-  });
+
 
 });
 

@@ -18,8 +18,6 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
 makeDancer.prototype.step = function() {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
-  let rng = Math.floor(Math.random * 99);
-  this.$node.css('filter', `invert(${rng}%)`);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
