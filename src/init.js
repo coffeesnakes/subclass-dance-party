@@ -34,14 +34,71 @@ $(document).ready(function () {
   $('.lineup').on('click', function (e) {
     for (let i = 0; i < window.dancers.length; ++i) {
       window.dancers[i].lineUp();
-      music();
     }
+    url = './audio/pokemon.mp3';
+    volume = 0.005;
+    music(url, volume);
   });
 
-  let music = function () {
-    let song = new Audio(src="./audio/pokemon.mp3");
+  $('.duo').on('click', function (e) {
+    var lead = window.dancers[(Math.floor(Math.random() * window.dancers.length))];
+    var leadX = lead.left;
+    var leadY = lead.top;
 
-    song.volume = 0.005;
+    var closest = null;
+    var shortestDistance = null;
+
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (window.dancers[i] !== lead) {
+        var ydif = (window.dancers[i].top - leadY);
+        var xdif = (window.dancers[i].left - leadX);
+        var hypotenuse = Math.sqrt( (ydif * ydif) + (xdif * xdif) );
+
+        if (closest === null || hypotenuse < shortestDistance) {
+          closest = window.dancers[i];
+          shortestDistance = hypotenuse;
+        }
+      }
+    }
+
+    lead.$node.addClass('duo');
+    closest.$node.addClass('duo');
+    setTimeout(function () {
+      lead.$node.css({ 'content': 'url("poki/char.gif")' });
+    }, 1337);
+    setTimeout(function () {
+      closest.$node.css({ 'content': 'url("poki/bulbasaur.gif")' });
+    }, 1337);
+    setTimeout(function () {
+      closest.$node.css({ 'content': 'url("poki/ripBulbasaur.gif")' });
+    }, 5040);
+
+    // move lead and closest to center of stage
+    var centerPos1 = {top: 500, left: 500};
+    var centerPos2 = {top: 500, left: 575};
+    lead.$node.animate(centerPos1, 1000);
+    closest.$node.animate(centerPos2, 1000);
+
+    // play fight song
+    url = './audio/pokemon-battle.mp3';
+    volume = 0.1;
+    music(url, volume);
+  });
+
+  // $('.lineup').on('click', function (e) {
+  //   for (let i = 0; i < window.dancers.length; ++i) {
+  //     window.dancers[i].lineUp();
+  //     url = './audio/pokemon.mp3';
+  //     volume = 0.005;
+  //     music(url, volume);
+  //   }
+  // });
+
+
+
+  let music = function (url, vol) {
+    let song = new Audio(src = url.toString());
+    song.volume = vol;
     song.play();
   };
 
