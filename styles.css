@@ -25,3 +25,12 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.bulbasaur {
+  position: absolute;
+}
+.charmander {
+  position: absolute;
+}
+.squirtle {
+  position: absolute;
+}
