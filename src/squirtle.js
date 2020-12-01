@@ -5,6 +5,11 @@ var makeSquirtle = function(top, left, timeBetweenSteps) {
   this.$node.addClass('squirtle');
 
   this.$node.append('<img src="https://media.giphy.com/media/eEPTnQjYCk8Vi/giphy.gif" alt="squirtle" style="width:100px; height:100px" />');
+
+  $('.squirtle').mouseover(function() {
+    //console.log('Squirtle mouseover accessed');
+
+  });
 };
 
 makeSquirtle.prototype = Object.create(makeDancer.prototype);
@@ -13,3 +18,4 @@ makeSquirtle.prototype.constructor = makeSquirtle;
 makeSquirtle.prototype.step = function () {
   makeDancer.prototype.step.call(this);
 };
+

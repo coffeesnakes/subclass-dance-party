@@ -9,10 +9,17 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // call step and setPosition
   this.setPosition(top, left);
   this.step();
+
+  // define mouseover behavior
+  // this.$node.mouseover(function () {
+  //   this.$node.toggle('bounce', { times: 3 }, 'slow');
+  // });
 };
 
 makeDancer.prototype.step = function() {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  let rng = Math.floor(Math.random * 99);
+  this.$node.css('filter', `invert(${rng}%)`);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
@@ -23,7 +30,10 @@ makeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
-
+// create lineUp method
+makeDancer.prototype.lineUp = function() {
+  this.$node.animate({top: '550px'}, 1337);
+};
 
 
 
