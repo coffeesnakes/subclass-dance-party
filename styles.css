@@ -7,25 +7,29 @@ body{
 background-size: 100%;
   background-color:#444;
   font-size: 18px;
+position: relative;
+overflow: hidden;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
 .title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
+  padding: 10px 20px 11px;
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
 }
 .topbar{
-  height:32px;
+  height:56px;
   background-color: #555;
 }
 .title{
-  background-color: #777;
+  background-color: #555;
+  padding: 10px 20px 11px;
+  font-weight: bold;
 }
-.dancer{
-  border:10px solid red;
-  border-radius:10px;
-  position:absolute;
+.pokeball{
+  position: absolute;
 }
 .bulbasaur {
   position: absolute;
@@ -36,3 +40,35 @@ body, a:link, a:visited, a:active{
 .squirtle {
   position: absolute;
 }
+.lineup, .duo {
+  padding: 10px 20px 11px;
+  float: left;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+ .addBulbasaur {
+  padding: 5px 12px;
+  float: right;
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+.addSquirtle {
+  padding: 5px 12px;
+  float: right;
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: #008CBA;
+  cursor: pointer;
+}
+.addCharmander {
+  padding: 5px 12px;
+  float: right;
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: #f44336;
+  cursor: pointer;
+}
+
